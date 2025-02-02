@@ -6,4 +6,4 @@ console.log("Website Loaded!");
         document.getElementById('navbar').innerHTML = fetch('nav.html')
             .then(response => response.text())
             .then(data => document.getElementById('navbar').innerHTML = data);
-    </script>
+ </script>
