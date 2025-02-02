@@ -73,62 +73,59 @@ header {
     padding: 10px 0;
 }
 
-/* General styles for the navigation */
+/* Basic styles for navigation */
 nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
 }
 
 nav ul li {
-    position: relative; /* Necessary for dropdown positioning */
+    position: relative; /* For dropdown positioning */
+    padding: 10px 20px;
 }
 
-/* Style the dropdown button */
-nav .dropbtn {
-    background-color: transparent;
+nav ul li a {
+    text-decoration: none;
     color: white;
-    padding: 10px 20px;
-    border: none;
     font-size: 16px;
-    cursor: pointer;
+}
+
+/* Style for dropdown items (hidden by default) */
+nav ul .menu-item:hover .dropdown-content {
+    display: block; /* Show on hover */
 }
 
 /* The dropdown content (hidden by default) */
 nav .dropdown-content {
     display: none;
     position: absolute;
-    top: 100%; /* Positions it below the dropdown button */
+    top: 100%; /* Position it directly below the parent */
     left: 0;
     background-color: #333;
-    min-width: 160px; /* Adjust this width as needed */
+    min-width: 160px; /* Adjust as needed */
     z-index: 1;
 }
 
-/* Show the dropdown menu when hovering */
-nav .dropdown:hover .dropdown-content {
-    display: block;
-}
-
 /* Style the links inside the dropdown */
-nav .dropdown-content a {
+nav .dropdown-content li a {
     color: white;
     padding: 10px;
     text-decoration: none;
     display: block;
 }
 
-/* Change the link color on hover */
-nav .dropdown-content a:hover {
+/* Change link color on hover */
+nav .dropdown-content li a:hover {
     background-color: #575757;
 }
 
-/* Add the arrow next to the dropdown link */
-nav .dropdown > a::after {
-    content: '\2193';  /* Unicode for down arrow */
-    padding-left: 5px;  /* Space between the text and the arrow */
+/* Add the arrow to the parent link */
+nav .menu-item > a::after {
+    content: '\2193'; /* Unicode for down arrow */
+    padding-left: 5px; /* Space between text and arrow */
+    font-size: 12px; /* Make the arrow smaller */
 }
-
