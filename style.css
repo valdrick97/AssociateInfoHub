@@ -53,7 +53,7 @@ footer {
     background-color: rgba(255, 255, 255, 0.8); /* Optional: semi-transparent background */
 }
 
-/* Optional: Style the iframe itself */
+/* Style the iframe itself */
 #chatbot-container iframe {
     width: 100%;    /* Make the iframe span the full width of the container */
     height: 100%;   /* Make the iframe take the full height of the container */
@@ -73,69 +73,62 @@ header {
     padding: 10px 0;
 }
 
+/* General styles for the navigation */
 nav ul {
     list-style-type: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
 nav ul li {
-    padding: 10px 20px;
+    position: relative; /* Necessary for dropdown positioning */
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-nav ul li a:hover {
-    color: #f1c40f; /* Yellow hover effect */
-}
-
-/* Dropdown Button (Arrow) */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown .dropbtn {
-    background-color: #333;
+/* Style the dropdown button */
+nav .dropbtn {
+    background-color: transparent;
     color: white;
     padding: 10px 20px;
-    font-size: 18px;
     border: none;
+    font-size: 16px;
     cursor: pointer;
 }
 
-.dropdown-content {
+/* The dropdown content (hidden by default) */
+nav .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #333;
-    min-width: 160px;
-    z-index: 1;
-    top: 100%;
+    top: 100%; /* Positions it below the dropdown button */
     left: 0;
+    background-color: #333;
+    min-width: 160px; /* Adjust this width as needed */
+    z-index: 1;
 }
 
-.dropdown-content a {
+/* Show the dropdown menu when hovering */
+nav .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Style the links inside the dropdown */
+nav .dropdown-content a {
     color: white;
-    padding: 12px 16px;
+    padding: 10px;
     text-decoration: none;
     display: block;
 }
 
-.dropdown-content a:hover {
+/* Change the link color on hover */
+nav .dropdown-content a:hover {
     background-color: #575757;
 }
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
+/* Add the arrow next to the dropdown link */
+nav .dropdown > a::after {
+    content: '\2193';  /* Unicode for down arrow */
+    padding-left: 5px;  /* Space between the text and the arrow */
 }
 
-/* Hover effect for dropdown button */
-.dropdown:hover .dropbtn {
-    background-color: #575757;
-}
