@@ -2,8 +2,15 @@
 console.log("Website Loaded!");
 
 // To load the Nav bar
- window.onload = function() {
-    document.getElementById('navbar').innerHTML = fetch('nav.html')
-        .then(response => response.text())
-        .then(data => document.getElementById('navbar').innerHTML = data);
-};
+ document.addEventListener('DOMContentLoaded', function () {
+    // Ensure the element exists before trying to modify it
+    const navbar = document.getElementById('navbar');
+    if (navbar) {
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => navbar.innerHTML = data)
+            .catch(err => console.error('Error loading nav.html:', err));
+    } else {
+        console.error("Navbar element not found.");
+    }
+});
