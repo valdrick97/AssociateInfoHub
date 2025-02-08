@@ -45,6 +45,10 @@ footer {
     overflow: hidden;
 }
 
+footer p {
+    margin: 0;
+}
+
 #chatbot-container {
     position: fixed; /* Fixes the chatbot to a specific position on the page */
     bottom: 0;       /* Positions the chatbot at the bottom of the page */
