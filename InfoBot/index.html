@@ -8,39 +8,36 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+
   <!-- Chatbot Icon -->
   <button id="chatbotButton" onclick="toggleChat()">
-  <img src="chatbot-icon.png" alt="Chatbot" id="chatbotIcon" />
-</button>
+    <img src="chatbot-icon.png" alt="Chatbot" id="chatbotIcon" />
+  </button>
 
-  <div id="chatbot-container">
-    <button id="chatbot-button">Open Chat</button>
-    <div id="chatContainer">
-        <div id="popupMessage">Click to chat!</div>
-        <div id="chatBox"></div>
-    </div>
-</div>
-  
   <!-- Chat Container -->
-  <div class="chat-container" id="chatContainer">
-    <div class="chat-box" id="chatBox"></div>
-    <div class="input-container">
-      <input id="userInput" type="text" placeholder="Type a message..." />
-      <button onclick="sendMessage()">Send</button>
+  <div id="chatbot-container" style="display: none;"> 
+    <div class="chat-container">
+      <div class="chat-box" id="chatBox"></div>
+      <div class="input-container">
+        <input id="userInput" type="text" placeholder="Type a message..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
     </div>
+    <!-- Pop-up Message -->
+    <div class="popup-message" id="popupMessage">I can help! Ask me anything.</div>
   </div>
-
-  <!-- Category Container (Outside Chat Container) -->
-  <!-- div id="categoryContainer" class="category-container"></div -->
-
-  <!-- Pop-up Message -->
-  <div class="popup-message" id="popupMessage">I can help! Ask me anything.</div>
 
   <!-- JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/fuzzyset.js"></script>
   <script src="chatbot.js"></script>
 
   <script>
+    // Toggle Chat Visibility
+    function toggleChat() {
+      let chatContainer = document.getElementById('chatbot-container');
+      chatContainer.style.display = (chatContainer.style.display === 'none' || chatContainer.style.display === '') ? 'block' : 'none';
+    }
+
     // Add an event listener for the 'Enter' key in case the user wants to submit via keyboard
     document.getElementById('userInput').addEventListener('keypress', function(e) {
       if (e.key === 'Enter') {
@@ -48,5 +45,6 @@
       }
     });
   </script>
+
 </body>
 </html>
