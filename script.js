@@ -32,6 +32,8 @@ window.onclick = function(event) {
 }
 
 function toggleChat() {
+    console.log("Button clicked!"); // Debugging log
+
     const chatContainer = document.getElementById('chatbot-container');
     const chatbotButton = document.getElementById('chatbotButton');
 
