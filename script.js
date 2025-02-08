@@ -41,7 +41,7 @@ document.getElementById('open-chatbot').addEventListener('click', function() {
     if (!document.getElementById('chatbot-script')) {
         const script = document.createElement('script');
         script.id = 'chatbot-script';
-        script.src = 'https://username.github.io/chatbot-repository-name/script.js';  // Replace with the actual script URL of your chatbot
+        script.src = 'https://github.com/valdrick97/InfoBot/script.js';  // Replace with the actual script URL of your chatbot
         script.onload = () => {
             console.log('Chatbot Loaded!');
         };
