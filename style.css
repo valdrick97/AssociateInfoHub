@@ -39,10 +39,10 @@ footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 20px;
-    position: relative; /* Ensures footer behaves normally */
-    max-height: 100px;
-    overflow: hidden;
+    height: 50px; /* Reduce height */
+    line-height: 50px; /* Align text vertically */
+    overflow: hidden; /* Prevents extra content from making it taller */
+    padding: 0; /* Removes extra padding */
 }
 
 footer p {
