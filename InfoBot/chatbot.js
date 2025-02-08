@@ -1,9 +1,16 @@
 document.addEventListener("DOMContentLoaded", function() {
+    console.log("DOM fully loaded.");
+    
     const chatContainer = document.getElementById('chatContainer');
     const popupMessage = document.getElementById('popupMessage');
     const chatBox = document.getElementById('chatBox');
     const chatbotContainer = document.getElementById("chatbot-container");
     const chatbotButton = document.getElementById("chatbot-button");
+
+    if (!chatContainer || !popupMessage || !chatBox || !chatbotButton) {
+        console.error("Chat elements not found. Check your HTML structure.");
+        return;
+    }
     
     let faqData = [];
     let fuzzySet = null;
