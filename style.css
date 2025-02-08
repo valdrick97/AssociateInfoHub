@@ -43,6 +43,7 @@ footer {
     line-height: 50px; /* Align text vertically */
     overflow: hidden; /* Prevents extra content from making it taller */
     padding: 0; /* Removes extra padding */
+    border: 2px solid red;
 }
 
 footer p {
@@ -58,6 +59,7 @@ footer p {
     height: 600px;   /* Set the height for the chatbot */
     z-index: 1000;   /* Ensure the chatbot stays on top of other content */
     background-color: rgba(255, 255, 255, 0.8); /* Optional: semi-transparent background */
+    border: 2px solid blue;
 }
 
 /* Style the iframe itself */
