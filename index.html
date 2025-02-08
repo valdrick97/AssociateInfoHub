@@ -24,22 +24,24 @@
         <p>© 2025 My Website</p>
         
     </footer>
-   <button id="chatbotButton" onclick="toggleChat()">Chat</button>
-    <div id="chatbot-container">
-        <div id="chatContainer" class="chat-container">
-            <div class="chat-box" id="chatBox"></div>
-            <div class="input-container">
-                <input id="userInput" type="text" placeholder="Type a message...">
-                <button onclick="sendMessage()">Send</button>
-            </div>
-        </div>
-        <div id="popupMessage" class="popup-message">I can help! Ask me anything.</div>
-    </div>
+   <button id="chatbotButton" onclick="toggleChat()">
+  <img src="https://raw.githubusercontent.com/valdrick97/InfoBot/main/chatbot-icon.png" alt="Chatbot" id="chatbotIcon">
+</button>
 
-    <script src="https://valdrick97.github.io/InfoBot/chatbot.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fuzzyset.js"></script>
-    <button id="chatbotButton" onclick="toggleChat()">
-      <img src="https://raw.githubusercontent.com/valdrick97/InfoBot/main/chatbot-icon.png" alt="Chatbot" id="chatbotIcon">
-    </button>
+<div id="chatbot-container" style="display: none;">
+    <div id="chatContainer" class="chat-container">
+        <div class="chat-box" id="chatBox"></div>
+        <div class="input-container">
+            <input id="userInput" type="text" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <div id="popupMessage" class="popup-message">I can help! Ask me anything.</div>
+</div>
+
+<!-- Add this link to the chatbot.js and fuzzyset.js -->
+<script src="https://valdrick97.github.io/InfoBot/chatbot.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuzzyset.js"></script>
+
 </body>
 </html>
