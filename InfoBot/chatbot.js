@@ -1,33 +1,52 @@
-const chatContainer = document.getElementById('chatContainer');
-const popupMessage = document.getElementById('popupMessage');
-const chatBox = document.getElementById('chatBox');
-// const categoryContainer = document.getElementById('categoryContainer');
-let faqData = [];
-let fuzzySet = null;
-let categories = [];
-let popupTimeout;
-let popupInterval;
-let isChatInitialized = false;
-let inactivityTimer;  // Timer for inactivity
-let isInactivityPromptShown = false; // Flag to prevent repeated inactivity prompts
-let isPromptDisplayed = false; // Flag to track if the prompt is shown
+document.addEventListener("DOMContentLoaded", function() {
+    const chatContainer = document.getElementById('chatContainer');
+    const popupMessage = document.getElementById('popupMessage');
+    const chatBox = document.getElementById('chatBox');
+    const chatbotContainer = document.getElementById("chatbot-container");
+    const chatbotButton = document.getElementById("chatbot-button");
+    
+    let faqData = [];
+    let fuzzySet = null;
+    let categories = [];
+    let popupTimeout;
+    let popupInterval;
+    let isChatInitialized = false;
+    let inactivityTimer;  // Timer for inactivity
+    let isInactivityPromptShown = false; // Flag to prevent repeated inactivity prompts
+    let isPromptDisplayed = false; // Flag to track if the prompt is shown
 
-// Disable category buttons (keeping them in code for future use)
-function disableCategoryButtons() {
-  const buttons = document.querySelectorAll('.category-button');
-  buttons.forEach(button => {
-    button.disabled = true; // Disable the buttons
-    button.style.pointerEvents = 'none'; // Prevent interaction (optional, but good for visual clarity)
-    button.style.opacity = '0.5'; // Make the buttons look disabled (optional)
-  });
-}
+    // Disable category buttons (keeping them in code for future use)
+    function disableCategoryButtons() {
+        const buttons = document.querySelectorAll('.category-button');
+        buttons.forEach(button => {
+            button.disabled = true; // Disable the buttons
+            button.style.pointerEvents = 'none'; // Prevent interaction
+            button.style.opacity = '0.5'; // Make the buttons look disabled
+        });
+    }
 
-// Ensure chat is hidden on page load
-document.addEventListener('DOMContentLoaded', () => {
-  chatContainer.style.display = "none"; // Ensure chat is hidden
-  popupMessage.style.display = "block"; // Show the popup message
-  disableCategoryButtons(); // Disable the category buttons on page load
-  loadChatHistory(); // Load chat history if available
+    if (chatbotContainer) {
+        chatbotContainer.style.display = "block"; // Ensure chatbot is visible
+    } else {
+        console.error("Chatbot container not found.");
+    }
+
+    if (chatbotButton) {
+        chatbotButton.addEventListener("click", function() {
+            console.log("Chatbot button clicked!");
+        });
+    } else {
+        console.error("Chatbot button not found.");
+    }
+
+    if (chatContainer && popupMessage) {
+        chatContainer.style.display = "none"; // Ensure chat is hidden on page load
+        popupMessage.style.display = "block"; // Show the popup message
+        disableCategoryButtons(); // Disable category buttons
+        loadChatHistory(); // Load chat history if available
+    } else {
+        console.error("Chat elements not found. Check your HTML structure.");
+    }
 });
 
 // Toggle chat visibility
