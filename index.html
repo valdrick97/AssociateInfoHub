@@ -21,8 +21,18 @@
         <p>© 2025 My Website</p>
         
     </footer>
+   <button id="chatbotButton" onclick="toggleChat()">Chat</button>
+    <div id="chatbot-container">
+        <div id="chatContainer" class="chat-container">
+            <div class="chat-box" id="chatBox"></div>
+            <div class="input-container">
+                <input id="userInput" type="text" placeholder="Type a message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+        <div id="popupMessage" class="popup-message">I can help! Ask me anything.</div>
+    </div>
+
     <script src="https://valdrick97.github.io/InfoBot/chatbot.js"></script>
-    <button id="chatbotButton" onclick="toggleChat()">Chat</button>
-<div id="chatbot-container"></div>
 </body>
 </html>
