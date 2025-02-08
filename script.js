@@ -30,3 +30,16 @@ window.onclick = function(event) {
         }
     }
 }
+
+function toggleChat() {
+    const chatContainer = document.getElementById('chatContainer');
+    const chatbotButton = document.getElementById('chatbotButton');
+    
+    if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
+        chatContainer.style.display = 'block';  // Show the chatbot
+        chatbotButton.textContent = "Close Chat"; // Optionally change the button text
+    } else {
+        chatContainer.style.display = 'none';  // Hide the chatbot
+        chatbotButton.textContent = "Open Chat"; // Optionally change the button text
+    }
+}
