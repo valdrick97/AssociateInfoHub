@@ -41,12 +41,13 @@ footer {
     text-align: center;
     padding: 20px;
     position: relative; /* Ensures footer behaves normally */
-    max-height: 100px
+    max-height: 100px;
     overflow: hidden;
 }
 
 footer p {
     margin: 0;
+    padding: 5px 0;
 }
 
 #chatbot-container {
