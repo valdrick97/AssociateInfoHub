@@ -129,3 +129,39 @@ nav .menu-item > a::after {
     padding-left: 5px; /* Space between text and arrow */
     font-size: 12px; /* Make the arrow smaller */
 }
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 10px; /* Adds spacing between dropdowns */
+}
+
+/* Button styling */
+.dropbtn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+/* Show dropdown when active */
+.dropdown-content.show {
+    display: block;
+}
+
