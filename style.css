@@ -168,11 +168,13 @@ nav .menu-item > a::after {
 /* Bullet point list */
 .dropdown-content ul {
     list-style-type: disc; /* Standard bullet points */
+    list-style-position: inside;
     padding-left: 20px; /* Indent bullets */
 }
 
 .dropdown-content li {
     margin-bottom: 5px; /* Space between bullet points */
+    padding-left: 5px;
 }
 
 .arrow {
