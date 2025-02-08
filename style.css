@@ -42,7 +42,7 @@ footer {
     padding: 20px;
     position: relative; /* Ensures footer behaves normally */
     max-height: 100px
-    Overflow: hidden;
+    overflow: hidden;
 }
 
 #chatbot-container {
