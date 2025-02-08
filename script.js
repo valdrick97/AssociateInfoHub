@@ -32,9 +32,9 @@ window.onclick = function(event) {
 }
 
 function toggleChat() {
-    const chatContainer = document.getElementById('chatContainer');
+    const chatContainer = document.getElementById('chatbot-container');
     const chatbotButton = document.getElementById('chatbotButton');
-    
+
     if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
         chatContainer.style.display = 'block';  // Show the chatbot
         chatbotButton.textContent = "Close Chat"; // Optionally change the button text
@@ -43,3 +43,4 @@ function toggleChat() {
         chatbotButton.textContent = "Open Chat"; // Optionally change the button text
     }
 }
+
