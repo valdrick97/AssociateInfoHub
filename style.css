@@ -174,3 +174,13 @@ nav .menu-item > a::after {
 .dropdown-content li {
     margin-bottom: 5px; /* Space between bullet points */
 }
+
+.arrow {
+    display: inline-block;
+    margin-left: 5px;
+    width: 8px;
+    height: 8px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg);
+}
