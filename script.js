@@ -30,3 +30,21 @@ window.onclick = function(event) {
         }
     }
 }
+
+document.getElementById('open-chatbot').addEventListener('click', function() {
+    const chatbotContainer = document.getElementById('chatbot-container');
+    
+    // Toggle visibility of the chatbot container
+    chatbotContainer.style.display = (chatbotContainer.style.display === 'none' || !chatbotContainer.style.display) ? 'block' : 'none';
+    
+    // Check if the chatbot script is already loaded, if not, dynamically load it
+    if (!document.getElementById('chatbot-script')) {
+        const script = document.createElement('script');
+        script.id = 'chatbot-script';
+        script.src = 'https://username.github.io/chatbot-repository-name/script.js';  // Replace with the actual script URL of your chatbot
+        script.onload = () => {
+            console.log('Chatbot Loaded!');
+        };
+        document.body.appendChild(script);
+    }
+});
