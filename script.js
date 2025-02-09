@@ -31,18 +31,20 @@ window.onclick = function(event) {
     }
 }
 
-function toggleChat() {
-    console.log("Button clicked!"); // Debugging log
-
-    const chatContainer = document.getElementById('chatbot-container');
-    const chatbotButton = document.getElementById('chatbotButton');
-
-    if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
-        chatContainer.style.display = 'block';  // Show the chatbot
-        chatbotButton.textContent = "Close Chat"; // Optionally change the button text
-    } else {
-        chatContainer.style.display = 'none';  // Hide the chatbot
-        chatbotButton.textContent = "Open Chat"; // Optionally change the button text
+document.getElementById('open-chatbot').addEventListener('click', function() {
+    const chatbotContainer = document.getElementById('chatbot-container');
+    
+    // Toggle visibility of the chatbot container
+    chatbotContainer.style.display = (chatbotContainer.style.display === 'none' || !chatbotContainer.style.display) ? 'block' : 'none';
+    
+    // Check if the chatbot script is already loaded, if not, dynamically load it
+    if (!document.getElementById('chatbot-script')) {
+        const script = document.createElement('script');
+        script.id = 'chatbot-script';
+        script.src = 'https://github.com/valdrick97/InfoBot/script.js';  // Replace with the actual script URL of your chatbot
+        script.onload = () => {
+            console.log('Chatbot Loaded!');
+        };
+        document.body.appendChild(script);
     }
-}
-
+});
