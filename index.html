@@ -5,11 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://valdrick97.github.io/InfoBot/style.css">
-
 </head>
 <body>
-    
     <!-- Header -->
     <header id="navbar"></header>
 
@@ -22,25 +19,8 @@
     <!-- Footer with Chatbot -->
     <footer>
         <p>© 2025 My Website</p>
-        
     </footer>
-   <button id="chatbotButton" onclick="toggleChat()">
-  <img src="https://raw.githubusercontent.com/valdrick97/InfoBot/main/chatbot-icon.png" alt="Chatbot" id="chatbotIcon">
-</button>
 
-<div id="chatbot-container" style="display: none;">
-    <div id="chatContainer" class="chat-container">
-        <div class="chat-box" id="chatBox"></div>
-        <div class="input-container">
-            <input id="userInput" type="text" placeholder="Type a message...">
-            <button onclick="sendMessage()">Send</button>
-        </div>
-    </div>
-    <div id="popupMessage" class="popup-message">I can help! Ask me anything.</div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/fuzzyset.js"></script> <!-- Ensure FuzzySet is loaded first -->
-<script src="https://valdrick97.github.io/InfoBot/chatbot.js"></script> <!-- Then your chatbot script -->
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
